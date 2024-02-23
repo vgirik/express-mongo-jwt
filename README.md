@@ -23,7 +23,7 @@ npm start
 ```
 
 Then visit [http://localhost:4040/](http://localhost:4040/)
-##tests
+## Tests
 ## add-user
 
 To create user use postman or similar tools
@@ -48,11 +48,11 @@ http://localhost:4040/user/token
 
 payload:
    {
-       "email":"venkata@gmail.com",
-       "password":"kvg1r1"
+       "email":"...",
+       "password":".."
    }
 
-## get list of user through JWT authentication 
+## get list of users through JWT authentication 
 
 Method : GET
 
@@ -80,7 +80,7 @@ Start the services
 
 ```sh
 docker-compose up -d
-```
+ 
 
 View the logs
 
