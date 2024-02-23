@@ -77,6 +77,13 @@ You can also use docker for development.
 docker build -t kv/test-mongo:1.0 .
 ```
 Start the services
+ Before you start the service make sure create a directory data on directory above the express-mongo-jwt
+
+ e.g.,
+  ```sh
+  sudo mkdir ../data
+  sudo chmod 777 ../data
+  ```
 
 ```sh
 docker-compose up -d
