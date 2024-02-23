@@ -71,16 +71,16 @@ pass the bearer token which you got it from the token api in the authentication 
 
 ## Docker
 
-You can also use docker for development. Make sure you run npm install on your host machine so that code linting and everything works fine.
+You can also use docker for development.
 
 ```sh
 docker build -t kv/test-mongo:1.0 .
-
+```
 Start the services
 
 ```sh
 docker-compose up -d
- 
+ ```
 
 View the logs
 
