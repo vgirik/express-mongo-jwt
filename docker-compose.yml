@@ -6,6 +6,37 @@ services:
    ports: 
      - "4040:4040" 
    container_name: express-app
-   network_mode: bridge
-    
+   networks: 
+     - mongo-net
+ mongodb:
+    image: mongodb/mongodb-community-server:6.0-ubi8
+    ports:
+       - "9900:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=4852e5ef4f1417c4953b21d855472475
+    volumes:
+      - type: bind
+        source: ./data
+        target: /data/db
+    container_name: mongodb    
+    restart: always
+    networks: 
+        - mongo-net
+  mongoexpress:  
+    image: mongo-express
+    restart: always
+    ports:
+      - "9081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: 4852e5ef4f1417c4953b21d855472475
+      ME_CONFIG_MONGODB_URL: mongodb://root:4852e5ef4f1417c4953b21d855472475@mongodb:27017/ 
+    container_name: mongo-express
+    networks: 
+        - mongo-net
+networks:
+  mongo-net:
+    driver: bridge
+   
  

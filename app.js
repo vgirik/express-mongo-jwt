@@ -27,7 +27,7 @@ app.get("/",
 //Express Routing middleware 
 app.use("/user",router);
 // Connection with MongoDB
-mongoose.connect(`mongodb://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@${process.env.MONGO_DB_SERVER}:${process.env.MONGO_DB_PORT}/${process.env.MONGO_DB_NAME}`)
+mongoose.connect(`mongodb://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@${process.env.MONGO_DB_SERVER}:${process.env.MONGO_DB_PORT}/${process.env.MONGO_DB_NAME}?authSource=${process.env.MONGO_AUTH_DB}`)
 .then(()=>{
     console.log('Mongdb Connected Successfully');   
 })
