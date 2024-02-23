@@ -6,6 +6,8 @@ services:
    ports: 
      - "4040:4040" 
    container_name: express-app
+   depends_on:
+      - mongodb
    networks: 
      - mongo-net
  mongodb:
@@ -17,13 +19,13 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=4852e5ef4f1417c4953b21d855472475
     volumes:
       - type: bind
-        source: ./data
+        source: ../data
         target: /data/db
     container_name: mongodb    
     restart: always
     networks: 
         - mongo-net
-  mongoexpress:  
+ mongoexpress:  
     image: mongo-express
     restart: always
     ports:
