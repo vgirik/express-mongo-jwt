@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+ express-app:
+   image: kv/test-mongo:1.0
+   ports: 
+     - "4040:4040" 
+   container_name: express-app
+   network_mode: bridge
+    
+ 
