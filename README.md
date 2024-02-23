@@ -23,7 +23,7 @@ npm start
 ```
 
 Then visit [http://localhost:4040/](http://localhost:4040/)
-##tests
+## Tests
 ## add-user
 
 To create user use postman or similar tools
@@ -52,7 +52,7 @@ payload:
        "password":"kvg1r1"
    }
 
-## get list of user through JWT authentication 
+## get list of users through JWT authentication 
 
 Method : GET
 
